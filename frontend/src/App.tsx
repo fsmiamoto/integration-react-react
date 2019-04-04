@@ -53,13 +53,14 @@ function App(props: {}) {
                 <Header>
                     <h1 className="header">Numerical Integration</h1>
                 </Header>
-                <Content style={{ minHeight: "80vh" }}>
-                    <Row type="flex" justify="center">
+                <Content style={{ minHeight: "80vh", minWidth: "100vw" }}>
+                    <Row type="flex" justify="center" style={{ width: "100%" }}>
                         <Col>
                             <Row style={{ margin: 5 }}>
                                 <Input
                                     className="input"
                                     placeholder="Function"
+                                    style={{ width: "100%" }}
                                     value={func}
                                     onChange={e => setFunc(e.target.value)}
                                 />
@@ -68,6 +69,7 @@ function App(props: {}) {
                                 <Input
                                     className="input"
                                     placeholder="Lower limit"
+                                    style={{ width: "100%" }}
                                     value={lowLimit}
                                     onChange={e => setLowLimit(e.target.value)}
                                 />
@@ -76,6 +78,7 @@ function App(props: {}) {
                                 <Input
                                     className="input"
                                     placeholder="Upper limit"
+                                    style={{ width: "100%" }}
                                     value={upLimit}
                                     onChange={e => setUpLimit(e.target.value)}
                                 />
