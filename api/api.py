@@ -17,9 +17,15 @@ def return_integration():
     # Convert a,b to float
     a, b = map(float, (a, b))
 
-    response = {
-        'result': integrate(f, a, b)
-    }
+    try:
+        result = integrate(f, a, b)
+        response = {
+            'result': result
+        }
+    except:
+        response = {
+            'result': "ERROR"
+        }
 
     return jsonify(response)
 
