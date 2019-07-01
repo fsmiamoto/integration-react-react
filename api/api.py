@@ -8,26 +8,25 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/integrate", methods=["POST"])
+@app.route("/integration", methods=["POST"])
 def return_integration():
-    a = request.json['inf_lim']
-    b = request.json['sup_lim']
-    f = request.json['f']
-
-    # Convert a,b to float
-    a, b = map(float, (a, b))
-
     try:
-        result = integrate(f, a, b)
-        response = {
-            'result': result
-        }
-    except:
-        response = {
-            'result': "ERROR"
-        }
+        func = request.json['func']
+        lower_limit = float(request.json['lower_limit'])
+        upper_limit = float(request.json['upper_limit'])
 
-    return jsonify(response)
+        result = integrate(func, lower_limit, upper_limit)
+
+        response = {
+            'func': func,
+            'lowerLimit': lower_limit,
+            'upperLimit': upper_limit,
+            'result': '{:.6f}'.format(result),
+        }
+        return jsonify(response)
+    except Exception as e:
+        print(e)
+        return e, 400
 
 
 if __name__ == '__main__':
