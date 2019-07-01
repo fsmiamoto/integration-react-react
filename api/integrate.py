@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-from numpy import linspace
-from numpy.random import uniform
 from sympy.parsing.sympy_parser import eval_expr
 import scipy.integrate as sp_integrate
 
