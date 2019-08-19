@@ -1,4 +1,5 @@
 api/__pycache__
 frontend/node_modules
 .vscode
+.vim
 
