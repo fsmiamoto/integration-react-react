@@ -2,7 +2,7 @@
 
 A test app where you can make a numerical integration using Flask and React integrated (ha!)
 
-Live preview: https://trusting-lewin-84bdce.netlify.com/
+Live preview: https://integrals.fsmiamoto.xyz
 
 ### Requirements
 
